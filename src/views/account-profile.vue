@@ -23,7 +23,6 @@ import {
 } from 'vue-feather-icons';
 
 import Navbar from "@/components/navbar";
-import Switcher from "@/components/switcher";
 import Footer from "@/components/footer";
 
 /**
@@ -35,7 +34,6 @@ export default {
     },
     components: {
         Navbar,
-        Switcher,
         Footer,
         ArrowUpIcon,
         FacebookIcon,
@@ -432,7 +430,7 @@ export default {
     <!--end section-->
     <Footer />
     <!-- Footer End -->
-    <Switcher />
+
     <!-- Back to top -->
     <a href="javascript: void(0);" class="btn btn-icon btn-primary back-to-top" id="back-to-top" v-scroll-to="'#topnav'">
         <arrow-up-icon class="icons"></arrow-up-icon>

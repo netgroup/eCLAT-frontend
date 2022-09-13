@@ -1,10 +1,13 @@
 <script>
+import Button from "../../../../vue-crash-2021-master/src/components/Button.vue";
 /**
  * Navbar component
  */
 export default {
+  components: { Button },
   data() {
     return {
+      user: localStorage.getItem(`user`),
       isCondensed: false,
     };
   },
@@ -21,7 +24,7 @@ export default {
   },
 
   mounted: () => {
-    window.onscroll = function () {
+    window.onscroll = function() {
       onwindowScroll();
     };
 
@@ -125,19 +128,18 @@ export default {
         <!-- Logo container-->
         <div>
           <router-link class="logo" to="/">
-            <img src="images/logo-dark.png" height="50" alt="" />
+            <img src="@/assets/images/logo-dark.png" height="50" alt="logo" />
           </router-link>
         </div>
         <div class="buy-button" v-if="isIcons !== true">
-          <a
-            href="https://1.envato.market/4n73n"
-            target="_blank"
+          <router-link
+            to="/login"
             class="btn"
             :class="{
               'btn-light': navLight === true,
               'btn-primary': navLight !== true,
             }"
-            >Buy Now</a
+            >Sign In</router-link
           >
         </div>
         <ul class="buy-button list-inline mb-0" v-if="isIcons === true">
@@ -165,7 +167,9 @@ export default {
             </b-dropdown>
           </li>
           <li class="list-inline-item mb-0 pr-2">
-            <a href="https://github.com/netgroup/eclat-daemon" class="btn btn-icon btn-soft-primary"
+            <a
+              href="https://github.com/netgroup/eclat-daemon"
+              class="btn btn-icon btn-soft-primary"
               ><i class="mdi mdi-github mdi-18px icons"></i
             ></a>
           </li>
@@ -201,7 +205,9 @@ export default {
               <router-link to="/" class="side-nav-link-ref">Home</router-link>
             </li>
             <li>
-              <router-link to="/" class="side-nav-link-ref">Getting started</router-link>
+              <router-link to="/" class="side-nav-link-ref"
+                >Getting started</router-link
+              >
             </li>
 
             <li class="has-submenu">
@@ -214,16 +220,20 @@ export default {
                   >
                 </li>
                 <li>
-                  <router-link to="/changelog" class="side-nav-link-ref"
-                    >Create your module <span class="badge badge-danger badge-success"
-                      >Tutorial</span
-                    ></router-link
-                  >
+                  <router-link to="/add-package" class="side-nav-link-ref"
+                    >Publish your own package
+                    <!-- <span class="badge badge-danger badge-success"
+                      >Tutorial</span> -->
+                  </router-link>
                 </li>
+
                 <li>
-                  <router-link to="/changelog" class="side-nav-link-ref"
-                    >Submit your module</router-link
+                  <router-link
+                    :to="`/users/` + this.user + `/packages`"
+                    class="side-nav-link-ref"
                   >
+                    My packages
+                  </router-link>
                 </li>
               </ul>
             </li>
@@ -233,12 +243,12 @@ export default {
               ><span class="menu-arrow"></span>
               <ul class="submenu">
                 <li>
-                  <a href="https://hike-eclat.readthedocs.io/" 
-                    target="_blank" 
+                  <a
+                    href="https://hike-eclat.readthedocs.io/"
+                    target="_blank"
                     class="side-nav-link-ref"
                     >Documentation</a
                   >
-                  
                 </li>
                 <li>
                   <router-link to="/changelog" class="side-nav-link-ref"
@@ -258,7 +268,9 @@ export default {
               ><span class="menu-arrow"></span>
               <ul class="submenu">
                 <li>
-                  <router-link to="/helpcenter-overview" class="side-nav-link-ref"
+                  <router-link
+                    to="/helpcenter-overview"
+                    class="side-nav-link-ref"
                     >Support</router-link
                   >
                 </li>
@@ -268,8 +280,9 @@ export default {
                   >
                 </li>
                 <li>
-                  <a href="https://github.com/netgroup/eclat-daemon" 
-                    target="_blank" 
+                  <a
+                    href="https://github.com/netgroup/eclat-daemon"
+                    target="_blank"
                     class="side-nav-link-ref"
                     >Github</a
                   >
@@ -279,11 +292,8 @@ export default {
           </ul>
           <!--end navigation menu-->
           <div class="buy-menu-btn d-none">
-            <a
-              href="https://1.envato.market/4n73n"
-              target="_blank"
-              class="btn btn-primary"
-              >Buy Now</a
+            <router-link to="/login" class="btn btn-primary"
+              >Sign In</router-link
             >
           </div>
           <!--end login button-->

@@ -1,8 +1,7 @@
 <script>
-import { ArrowUpIcon,ArrowRightIcon } from "vue-feather-icons";
+import { ArrowUpIcon, ArrowRightIcon } from "vue-feather-icons";
 
 import Navbar from "@/components/navbar";
-import Switcher from "@/components/switcher";
 import Footer from "@/components/footer";
 
 /**
@@ -20,7 +19,7 @@ export default {
 
 <template>
   <div>
-    <Navbar :isIcons="true"/>
+    <Navbar :isIcons="true" />
 
     <!-- Hero Start -->
     <section class="bg-half bg-light d-table w-100">
@@ -36,13 +35,18 @@ export default {
                 in seconds
               </h1>
               <p class="para-desc text-muted">
-                eCLAT simplifies the writing of custom application in eBPF re-using modules. Write your code in Python and deploy the bytecode.
+                eCLAT simplifies the writing of custom application in eBPF
+                re-using modules. Write your code in Python and deploy the
+                bytecode.
               </p>
+
               <div class="mt-4 pt-2">
-                <a href="javascript:void(0)" class="btn btn-primary mr-2"
+                <a href="javascript:void(0)" class="btn btn-primary me-2"
                   >Get Started</a
                 >
-                <a href="javascript:void(0)" class="btn btn-outline-primary"
+                <a
+                  href="https://hike-eclat.readthedocs.io/"
+                  class="btn btn-outline-primary"
                   >Documentation</a
                 >
               </div>
@@ -155,7 +159,11 @@ export default {
             <div class="section-title mb-4 pb-2">
               <h4 class="title mb-4">Programmable eBPF application</h4>
               <p class="para-desc text-muted mb-0">
-                <span class="text-primary font-weight-bold">eCLAT</span> allows you to build almost any kind of networking application using eBPF. You can type your application logic in a python-like syntax and import packages with many pre-made functions you can directly use as they were functions.
+                <span class="text-primary font-weight-bold">eCLAT</span> allows
+                you to build almost any kind of networking application using
+                eBPF. You can type your application logic in a python-like
+                syntax and import packages with many pre-made functions you can
+                directly use as they were functions.
               </p>
             </div>
           </div>
@@ -176,12 +184,16 @@ export default {
                   >Modular</a
                 >
                 <p class="text-muted mt-2">
-                  You have access to a large set of modules to build your own application
+                  You have access to a large set of modules to build your own
+                  application
                 </p>
                 <a href="javascript:void(0)" class="text-primary read-more"
                   >View all modules <i class="mdi mdi-chevron-right"></i
                 ></a>
-                <i class="uil uil-layer-group text-primary full-img"></i>
+                <i
+                  class="uil uil-layer-group text-primary full-img"
+                  style="text-align: center"
+                ></i>
               </div>
             </div>
           </div>
@@ -199,12 +211,19 @@ export default {
                   >Extensible</a
                 >
                 <p class="text-muted mt-2">
-                  Thanks to the <span class="text-primary font-weight-bold"> HIKe technology</span> you can write your module, publish it and reuse many time.
+                  Thanks to the
+                  <span class="text-primary font-weight-bold">
+                    HIKe technology</span
+                  >
+                  you can write your module, publish it and reuse many time.
                 </p>
                 <a href="javascript:void(0)" class="text-primary read-more"
                   >Read More <i class="mdi mdi-chevron-right"></i
                 ></a>
-                <i class="uil uil-airplay text-primary full-img"></i>
+                <i
+                  class="uil uil-airplay text-primary full-img "
+                  style="text-align: center"
+                ></i>
               </div>
             </div>
           </div>
@@ -222,12 +241,16 @@ export default {
                   >Customizable</a
                 >
                 <p class="text-muted mt-2">
-                  You can easily program different logic, as programming is more flexibile than configuring
+                  You can easily program different logic, as programming is more
+                  flexibile than configuring
                 </p>
-                <a href="javascript:void(0)" class="text-primary read-more"
+                <a href="javascript:void(0)" class=" text-primary read-more"
                   >Read More <i class="mdi mdi-chevron-right"></i
                 ></a>
-                <i class="uil uil-focus-target text-primary full-img"></i>
+                <i
+                  class="uil uil-focus-target text-primary full-img "
+                  style="text-align: center"
+                ></i>
               </div>
             </div>
           </div>
@@ -241,16 +264,17 @@ export default {
                 <i class="uil uil-bolt d-block rounded h3 mb-0"></i>
               </div>
               <div class="card-body p-0 mt-4">
-                <a href="javascript:void(0)" class="title h5 text-dark"
-                  >Fast</a
-                >
+                <a href="javascript:void(0)" class="title h5 text-dark">Fast</a>
                 <p class="text-muted mt-2">
                   eBPF allows light-speed execution of your code in the XDP hook
                 </p>
                 <a href="javascript:void(0)" class="text-primary read-more"
                   >Read More <i class="mdi mdi-chevron-right"></i
                 ></a>
-                <i class="uil uil-expand-arrows text-primary full-img"></i>
+                <i
+                  class="uil uil-expand-arrows text-primary full-img"
+                  style="text-align: center"
+                ></i>
               </div>
             </div>
           </div>
@@ -296,12 +320,21 @@ export default {
                           <h5 class="title font-weight-normal mb-0">Docker</h5>
                         </div>
                       </template>
-                      
-                     <p class="text-muted font-weight-bold mb-0">git clone https://github.com/netgroup/eclat-docker/</p>
-                     <p class="text-muted font-weight-bold mb-0">cd eclat-docker && scripts/setup.sh</p>
-                     <p class="text-muted font-weight-bold mb-0">docker build -t eclat:latest .</p>
-                     <p class="text-muted font-weight-bold mb-0">docker run --rm -t -i --privileged --name eclat -v $(pwd)/eclat-daemon:/opt/eclat-daemon eclat:latest  /sbin/my_init -- bash -l
-</p>
+
+                      <p class="text-muted font-weight-bold mb-0">
+                        git clone https://github.com/netgroup/eclat-docker/
+                      </p>
+                      <p class="text-muted font-weight-bold mb-0">
+                        cd eclat-docker && scripts/setup.sh
+                      </p>
+                      <p class="text-muted font-weight-bold mb-0">
+                        docker build -t eclat:latest .
+                      </p>
+                      <p class="text-muted font-weight-bold mb-0">
+                        docker run --rm -t -i --privileged --name eclat -v
+                        $(pwd)/eclat-daemon:/opt/eclat-daemon eclat:latest
+                        /sbin/my_init -- bash -l
+                      </p>
                     </b-tab>
                     <b-tab>
                       <template v-slot:title>
@@ -309,9 +342,8 @@ export default {
                           <h5 class="title font-weight-normal mb-0">Install</h5>
                         </div>
                       </template>
-                     <p class="text-muted font-weight-bold mb-0">git clone </p>
+                      <p class="text-muted font-weight-bold mb-0">git clone</p>
                     </b-tab>
-                    
                   </b-tabs>
                   <!--end nav pills-->
                 </div>
@@ -321,13 +353,13 @@ export default {
             </div>
 
             <ul class="list-unstyled text-muted mb-0 mt-3">
-              <li class="list-inline-item mr-lg-5 mr-4">
-                <span class="text-success h5 mr-2"
+              <li class="list-inline-item ms-lg-5 me-4">
+                <span class="text-success h5 me-2"
                   ><i class="uil uil-check-circle align-middle"></i></span
                 >Organize your data
               </li>
-              <li class="list-inline-item mr-lg-5 mr-4">
-                <span class="text-success h5 mr-2"
+              <li class="list-inline-item ms-lg-5 me-4">
+                <span class="text-success h5 me-2"
                   ><i class="uil uil-check-circle align-middle"></i></span
                 >Work with any team
               </li>
@@ -349,7 +381,7 @@ export default {
           <div
             class="col-lg-7 col-md-6 order-2 order-md-1 mt-4 mt-sm-0 pt-2 pt-sm-0"
           >
-            <div class="section-title mr-lg-5">
+            <div class="section-title me-lg-5">
               <h4 class="title mb-4">
                 Build tools and <br />
                 extensive documention
@@ -361,17 +393,17 @@ export default {
               </p>
               <ul class="list-unstyled text-muted">
                 <li class="mb-0">
-                  <span class="text-primary h5 mr-2"
+                  <span class="text-primary h5 me-2"
                     ><i class="uil uil-check-circle align-middle"></i></span
                   >Digital Marketing Solutions for Tomorrow
                 </li>
                 <li class="mb-0">
-                  <span class="text-primary h5 mr-2"
+                  <span class="text-primary h5 me-2"
                     ><i class="uil uil-check-circle align-middle"></i></span
                   >Our Talented & Experienced Marketing Agency
                 </li>
                 <li class="mb-0">
-                  <span class="text-primary h5 mr-2"
+                  <span class="text-primary h5 m-2"
                     ><i class="uil uil-check-circle align-middle"></i></span
                   >Create your own skin to match your brand
                 </li>
@@ -379,7 +411,8 @@ export default {
               <div class="mt-4">
                 <a href="javascript:void(0)" class="btn btn-primary"
                   >Read More
-                 <arrow-right-icon class="fea icon-sm"></arrow-right-icon></a>
+                  <arrow-right-icon class="fea icon-sm"></arrow-right-icon
+                ></a>
               </div>
             </div>
           </div>
@@ -388,7 +421,6 @@ export default {
         <!--end row-->
       </div>
       <!--end container-->
-
 
       <div class="container mt-100 mt-60">
         <div class="row justify-content-center">

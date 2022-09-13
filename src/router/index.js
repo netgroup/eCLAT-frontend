@@ -5,19 +5,60 @@ Vue.use(VueRouter);
 
 const routes = [
   {
+    path: "*",
+    component: () => import("../views/page-error"),
+  },
+  {
     path: "/",
     name: "Home",
     component: () => import("../views/index-developer"),
   },
   {
+    path: "/login",
+    name: "login",
+    component: () => import("../views/login-page.vue"),
+  },
+  {
+    path: "/signup",
+    name: "signup",
+    component: () => import("../views/signup-page.vue"),
+  },
+  {
     path: "/packages",
-    name: "Packages",
+    name: "packages",
     component: () => import("../views/packages"),
   },
   {
-    path: "*",
-    component: () => import("../views/page-error"),
+    path: "/add-package",
+    name: "AddPackage",
+    component: () => import("../views/add-package"),
   },
+  {
+    path: "/packages/:name",
+    component: () => import("../views/package-detail"),
+  },
+  {
+    path: "/packages/:name/update-package",
+    component: () => import("../views/update-package"),
+  },
+  {
+    path: "/packages/:name/add-version",
+    component: () => import("../views/add-version"),
+  },
+  {
+    path: "/packages/:name/delete-package",
+    component: () => import("../views/delete-package"),
+  },
+  {
+    // id or username
+    path: "/users/:id",
+    component: () => import("../views/user"),
+  },
+  {
+    path: "/users/:id/packages",
+    component: () => import("../views/user-packages"),
+  },
+
   {
     path: "/page-aboutus",
     name: "aboutus",
@@ -44,11 +85,6 @@ const routes = [
     component: () => import("../views/page-team"),
   },
   {
-    path: "/page-pricing",
-    name: "pricing",
-    component: () => import("../views/page-pricing"),
-  },
-  {
     path: "/account-profile",
     name: "account-profile",
     component: () => import("../views/account-profile"),
@@ -69,44 +105,9 @@ const routes = [
     component: () => import("../views/account-messages"),
   },
   {
-    path: "/account-payments",
-    name: "account-payments",
-    component: () => import("../views/account-payments"),
-  },
-  {
     path: "/account-setting",
     name: "account-setting",
     component: () => import("../views/account-setting"),
-  },
-  {
-    path: "/page-invoice",
-    name: "page-invoice",
-    component: () => import("../views/page-invoice"),
-  },
-  {
-    path: "/shop-grids",
-    name: "shop-grids",
-    component: () => import("../views/shop-grids"),
-  },
-  {
-    path: "/shop-product-detail",
-    name: "shop-product-detail",
-    component: () => import("../views/shop-product-detail"),
-  },
-  {
-    path: "/shop-cart",
-    name: "shop-cart",
-    component: () => import("../views/shop-cart"),
-  },
-  {
-    path: "/shop-lists",
-    name: "shop-lists",
-    component: () => import("../views/shop-lists"),
-  },
-  {
-    path: "/shop-checkouts",
-    name: "shop-checkouts",
-    component: () => import("../views/shop-checkouts"),
   },
   {
     path: "/shop-myaccount",
@@ -132,26 +133,6 @@ const routes = [
     path: "/helpcenter-support-request",
     name: "helpcenter-support-request",
     component: () => import("../views/helpcenter-support-request"),
-  },
-  {
-    path: "/forums-topic",
-    name: "forums-topic",
-    component: () => import("../views/forums-topic"),
-  },
-  {
-    path: "/forums-comments",
-    name: "forums-comments",
-    component: () => import("../views/forums-comments"),
-  },
-  {
-    path: "/email-alert",
-    name: "email-alert",
-    component: () => import("../views/email-alert"),
-  },
-  {
-    path: "/email-invoice",
-    name: "email-invoice",
-    component: () => import("../views/email-invoice"),
   },
   {
     path: "/email-confirmation",
@@ -239,74 +220,9 @@ const routes = [
     component: () => import("../views/page-case-detail"),
   },
   {
-    path: "/page-portfolio-detail",
-    name: "portfolio-detail",
-    component: () => import("../views/page-portfolio-detail"),
-  },
-  {
-    path: "/page-portfolio-modern",
-    name: "portfolio-modern",
-    component: () => import("../views/page-portfolio-modern"),
-  },
-  {
-    path: "/page-portfolio-classic",
-    name: "portfolio-classic",
-    component: () => import("../views/page-portfolio-classic"),
-  },
-  {
-    path: "/page-portfolio-grid",
-    name: "portfolio-grid",
-    component: () => import("../views/page-portfolio-grid"),
-  },
-  {
-    path: "/page-portfolio-masonry",
-    name: "portfolio-masonry",
-    component: () => import("../views/page-portfolio-masonry"),
-  },
-  {
-    path: "/auth-login",
-    name: "login",
-    component: () => import("../views/auth-login"),
-  },
-  {
-    path: "/auth-signup",
-    name: "signup",
-    component: () => import("../views/auth-signup"),
-  },
-  {
     path: "/auth-re-password",
     name: "reset-password",
     component: () => import("../views/auth-re-password"),
-  },
-  {
-    path: "/auth-cover-login",
-    name: "cover-login",
-    component: () => import("../views/auth-cover-login"),
-  },
-  {
-    path: "/auth-cover-signup",
-    name: "cover-signup",
-    component: () => import("../views/auth-cover-signup"),
-  },
-  {
-    path: "/auth-cover-re-password",
-    name: "cover-reset-password",
-    component: () => import("../views/auth-cover-re-password"),
-  },
-  {
-    path: "/auth-login-three",
-    name: "login-three",
-    component: () => import("../views/auth-login-three"),
-  },
-  {
-    path: "/auth-signup-three",
-    name: "signup-three",
-    component: () => import("../views/auth-signup-three"),
-  },
-  {
-    path: "/auth-re-password-three",
-    name: "reset-password-three",
-    component: () => import("../views/auth-re-password-three"),
   },
   {
     path: "/page-privacy",
@@ -317,16 +233,6 @@ const routes = [
     path: "/page-terms",
     name: "terms",
     component: () => import("../views/page-terms"),
-  },
-  {
-    path: "/page-comingsoon",
-    name: "comingsoon",
-    component: () => import("../views/page-comingsoon"),
-  },
-  {
-    path: "/page-comingsoon2",
-    name: "comingsoon2",
-    component: () => import("../views/page-comingsoon2"),
   },
   {
     path: "/page-maintenance",
@@ -349,24 +255,9 @@ const routes = [
     component: () => import("../views/page-contact-detail"),
   },
   {
-    path: "/page-contact-one",
-    name: "contact-one",
-    component: () => import("../views/page-contact-one"),
-  },
-  {
-    path: "/page-contact-two",
-    name: "contact-two",
-    component: () => import("../views/page-contact-two"),
-  },
-  {
-    path: "/page-contact-three",
-    name: "contact-three",
-    component: () => import("../views/page-contact-three"),
-  },
-  {
-    path: "/documentation",
-    name: "documentation",
-    component: () => import("../views/documentation"),
+    path: "/page-contact",
+    name: "contact",
+    component: () => import("../views/page-contact"),
   },
   {
     path: "/changelog",
