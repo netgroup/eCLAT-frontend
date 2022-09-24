@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     async verifyOTP(otpData) {
-      const res = await fetch("/backend/api/auth/verify-otp", {
+      const res = await fetch("/backend/auth/verify-otp", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -33,7 +33,7 @@ export default {
       }
     },
     async resendOTP(otpData) {
-      const res = await fetch("/backend/api/auth/resend-verify-otp", {
+      const res = await fetch("/backend/auth/resend-verify-otp", {
         method: "POST",
         headers: {
           "Content-type": "application/json",

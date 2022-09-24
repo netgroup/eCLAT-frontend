@@ -107,7 +107,7 @@ export default {
                 >
               </li>
               <li>
-                <router-link to="/auth-cover-login" class="text-foot"
+                <router-link to="/login" class="text-foot"
                   ><i class="mdi mdi-chevron-right mr-1"></i> Login</router-link
                 >
               </li>
@@ -131,9 +131,8 @@ export default {
                 >
               </li>
               <li>
-                <router-link to="/documentation" class="text-foot"
-                  ><i class="mdi mdi-chevron-right mr-1"></i>
-                  Documentation</router-link
+                <a href="https://hike-eclat.readthedocs.io/" class="text-foot"
+                  ><i class="mdi mdi-chevron-right mr-1"></i> Documentation</a
                 >
               </li>
               <li>

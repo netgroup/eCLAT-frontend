@@ -1,21 +1,21 @@
 <script>
-import { ArrowRightIcon, SettingsIcon, XIcon } from "vue-feather-icons";
+import {
+  CheckCircleIcon,
+  SettingsIcon,
+  XCircleIcon,
+  PauseIcon,
+} from "vue-feather-icons";
 
 export default {
   name: "PackageRelease",
-  components: { ArrowRightIcon, XIcon, SettingsIcon },
+  components: { CheckCircleIcon, XCircleIcon, SettingsIcon, PauseIcon },
   props: {
     release: Object,
     showOptions: Boolean,
+    git_url: String,
   },
   emits: ["delete-version"],
-  methods: {
-    decodeEntity(inputStr) {
-      var textarea = document.createElement("textarea");
-      textarea.innerHTML = inputStr;
-      return textarea.value;
-    },
-  },
+  methods: {},
 };
 </script>
 
@@ -49,21 +49,30 @@ export default {
 
     <h4>
       <!-- X icon if version is not verified or suspended, arrow icon otherwise -->
-      <x-icon
-        v-show="release.stato !== 'verified'"
-        class="fea icon-sm  mr-2"
-        style="color: red"
-      ></x-icon>
-      <arrow-right-icon
-        v-show="release.stato === 'verified'"
+      <x-circle-icon
+        v-show="release.status === 'error'"
+        class="fea icon-sm text-danger  mr-2"
+        v-b-tooltip.hover.v-danger
+        title="Version didn't pass the verification phase!"
+      ></x-circle-icon>
+      <check-circle-icon
+        v-show="release.status === 'verified'"
         class="fea icon-sm text-success mr-2"
-      ></arrow-right-icon>
+        v-b-tooltip.hover="{ variant: 'info' }"
+        title="Version verified succesfully!"
+      ></check-circle-icon>
+      <pause-icon
+        v-show="release.status === 'queue'"
+        class="fea icon-sm text-warning mr-2"
+        v-b-tooltip.hover
+        title="Version waiting to be verified."
+      ></pause-icon>
       {{ release.version }}
     </h4>
     <p>
-      GitHub:
-      <a :href="decodeEntity(release.url)" target="_blank">{{
-        decodeEntity(release.url)
+      GitHub commit:
+      <a :href="`${git_url}/tree/${release.commit}`" target="_blank">{{
+        release.commit
       }}</a>
     </p>
     <p>

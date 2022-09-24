@@ -14,7 +14,7 @@ export default {
   methods: {
     async addNewPackage(newVersion) {
       const res = await fetch(
-        `/backend/api/packages/${this.$route.params.name}/version`,
+        `/backend/packages/${this.$route.params.name}/version`,
         {
           method: "POST",
           headers: {

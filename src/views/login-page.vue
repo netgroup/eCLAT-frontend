@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     async loginUser(userInfo) {
-      const res = await fetch("/backend/api/auth/login", {
+      const res = await fetch("/backend/auth/login", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -27,7 +27,7 @@ export default {
 
       if (data.status === 1) {
         //Save the jwt token and the user id locally
-        localStorage.setItem("user", data.data._id);
+        localStorage.setItem("user", data.data.username);
         localStorage.setItem("token", data.data.token);
         this.$router.push("/");
       } else {

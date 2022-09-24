@@ -16,8 +16,7 @@ export default {
   name: "RegisterForm",
   data() {
     return {
-      firstName: "",
-      lastName: "",
+      username: "",
       email: "",
       password: "",
     };
@@ -27,16 +26,14 @@ export default {
       e.preventDefault();
 
       const newUser = {
-        firstName: this.firstName,
-        lastName: this.lastName,
+        username: this.username,
         email: this.email,
         password: this.password,
       };
 
       this.$emit("register-user", newUser);
 
-      this.firstName = "";
-      this.lastName = "";
+      this.username = "";
       this.email = "";
       this.password = "";
     },
@@ -86,44 +83,25 @@ export default {
                 <h4 class="card-title text-center">Signup</h4>
                 <form class="login-form mt-4" @submit.prevent="onSubmit">
                   <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group ">
                         <label
-                          >First name <span class="text-danger">*</span></label
+                          >Username <span class="text-danger">*</span></label
                         >
                         <div class="position-relative">
                           <user-icon class="fea icon-sm icons"></user-icon>
                           <input
                             type="text"
-                            v-model="firstName"
+                            v-model="username"
                             class="form-control ps-5"
-                            placeholder="First Name"
-                            name="firstName"
+                            placeholder="Username"
+                            name="username"
                             required=""
                           />
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <div class="form-group ">
-                        <label
-                          >Last name <span class="text-danger">*</span></label
-                        >
-                        <div class="position-relative">
-                          <user-check-icon
-                            class="fea icon-sm icons"
-                          ></user-check-icon>
-                          <input
-                            type="text"
-                            v-model="lastName"
-                            class="form-control ps-5"
-                            placeholder="Last Name"
-                            name="lastName"
-                            required=""
-                          />
-                        </div>
-                      </div>
-                    </div>
+
                     <div class="col-md-12">
                       <div class="form-group ">
                         <label

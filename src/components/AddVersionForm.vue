@@ -6,7 +6,7 @@ import {
   TwitterIcon,
   LinkedinIcon,
   HomeIcon,
-  PackageIcon,
+  GitCommitIcon,
   UserCheckIcon,
 } from "vue-feather-icons";
 
@@ -14,7 +14,7 @@ export default {
   name: "AddVersionForm",
   data() {
     return {
-      url: "",
+      commit: "",
       major: "",
       minor: "",
       patch: "",
@@ -23,7 +23,7 @@ export default {
     };
   },
   async created() {
-    const res = await fetch(`/backend/api/packages/${this.$route.params.name}`);
+    const res = await fetch(`/backend/packages/${this.$route.params.name}`);
 
     const data = await res.json();
 
@@ -46,14 +46,14 @@ export default {
       const version = `${this.major}.${this.minor}.${this.patch}`;
 
       const newVersion = {
-        url: this.url,
+        commit: this.commit,
         version: version,
         note: this.note,
       };
 
       this.$emit("add-version", newVersion);
 
-      this.url = "";
+      this.commit = "";
       this.note = "";
     },
   },
@@ -65,7 +65,7 @@ export default {
     TwitterIcon,
     LinkedinIcon,
     HomeIcon,
-    PackageIcon,
+    GitCommitIcon,
     UserCheckIcon,
   },
   emits: ["add-version"],
@@ -110,19 +110,19 @@ export default {
                     <div class="col-md-12">
                       <div class="form-group ">
                         <label
-                          >GitHub URL: <span class="text-danger">*</span></label
+                          >GitHub commit:
+                          <span class="text-danger">*</span></label
                         >
                         <div class="position-relative">
-                          <package-icon
+                          <git-commit-icon
                             class="fea icon-sm icons"
-                          ></package-icon>
+                          ></git-commit-icon>
                           <input
-                            type="url"
-                            pattern="https://.*"
-                            v-model="url"
+                            type="text"
+                            v-model="commit"
                             class="form-control ps-5"
-                            placeholder="Add your GitHub commit link. "
-                            name="url"
+                            placeholder="Add your GitHub commit id. Example: d9c069b2c38d93a816034ed1f1bd0b5fb6e23395 "
+                            name="commit"
                             required
                           />
                         </div>

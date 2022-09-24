@@ -50,12 +50,7 @@ const routes = [
     component: () => import("../views/delete-package"),
   },
   {
-    // id or username
-    path: "/users/:id",
-    component: () => import("../views/user"),
-  },
-  {
-    path: "/users/:id/packages",
+    path: "/users/:username/packages",
     component: () => import("../views/user-packages"),
   },
 
@@ -138,16 +133,6 @@ const routes = [
     path: "/email-confirmation",
     name: "email-confirmation",
     component: () => import("../views/email-confirmation"),
-  },
-  {
-    path: "/email-password-reset",
-    name: "email-password-reset",
-    component: () => import("../views/email-password-reset"),
-  },
-  {
-    path: "/page-jobs",
-    name: "jobs",
-    component: () => import("../views/page-jobs"),
   },
   {
     path: "/page-job-apply",

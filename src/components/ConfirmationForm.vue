@@ -6,6 +6,7 @@ export default {
   components: { PackageIcon },
   props: {
     operation: String,
+    packageName: String,
   },
   data() {
     return {
@@ -65,7 +66,9 @@ export default {
 
               <tr>
                 <td style="padding: 35px 24px 15px; color: #8492a6;">
-                  Insert the name of the package to confirm the operation.
+                  Insert the name of the package
+                  <span style="color: black">{{ packageName }}</span> to confirm
+                  the operation.
                 </td>
               </tr>
 

@@ -12,17 +12,14 @@ export default {
   },
   methods: {
     async updatePackage(newPackage) {
-      const res = await fetch(
-        `/backend/api/packages/${this.$route.params.name}`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-          body: JSON.stringify(newPackage),
-        }
-      );
+      const res = await fetch(`/backend/packages/${this.$route.params.name}`, {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify(newPackage),
+      });
 
       const data = await res.json();
       console.log(data);

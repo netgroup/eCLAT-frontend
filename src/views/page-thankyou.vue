@@ -26,8 +26,7 @@ export default {
               </div>
               <h1 class="my-4 font-weight-bold">Thank You</h1>
               <p class="text-muted para-desc mx-auto">
-                Launch your campaign and benefit from our expertise on designing
-                and managing conversion centered bootstrap4 html page.
+                for using the eCLAT website.
               </p>
               <router-link to="/" class="btn btn-soft-primary mt-3"
                 >Go To Home</router-link

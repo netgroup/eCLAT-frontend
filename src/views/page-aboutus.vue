@@ -163,10 +163,11 @@ export default {
             <div class="section-title ml-lg-4">
               <h4 class="title mb-4">Who we are</h4>
               <p class="text-muted">
-                We are a group of researchers working in the 
+                We are a group of researchers working in the
                 <span class="text-primary font-weight-bold">
-                Department of Electronic Engineering of 
-                Tor Vergata University of Rome.</span> 
+                  Department of Electronic Engineering of Tor Vergata University
+                  of Rome.</span
+                >
               </p>
               <a href="javascript:void(0)" class="btn btn-primary mt-3"
                 >Contact us <i class="mdi mdi-chevron-right"></i
@@ -213,14 +214,15 @@ export default {
                 Do you want to meet with us?
               </h4>
               <p class="text-muted para-desc mx-auto">
-                We collaborate with several companies to lower the entry barrier for eBPF using our 
-                <span class="text-primary font-weight-bold">eCLAT</span> and 
+                We collaborate with several companies to lower the entry barrier
+                for eBPF using our
+                <span class="text-primary font-weight-bold">eCLAT</span> and
                 <span class="text-primary font-weight-bold">HIKe</span>
                 technology.
               </p>
 
               <div class="mt-4">
-                <a href="javascript:void(0)" class="btn btn-primary mt-2 mr-2"
+                <a href="javascript:void(0)" class="btn btn-primary mt-2 me-2"
                   >Contact us</a
                 >
                 <a

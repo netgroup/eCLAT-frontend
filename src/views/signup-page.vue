@@ -12,7 +12,7 @@ export default {
   },
   methods: {
     async registerUser(user) {
-      const res = await fetch("/backend/api/auth/register", {
+      const res = await fetch("/backend/auth/register", {
         method: "POST",
         headers: {
           "Content-type": "application/json",

@@ -7,6 +7,8 @@ import {
   LinkedinIcon,
   HomeIcon,
   PackageIcon,
+  GithubIcon,
+  GitBranchIcon,
   UserCheckIcon,
 } from "vue-feather-icons";
 
@@ -18,6 +20,8 @@ export default {
   data() {
     return {
       name: "",
+      git_url: "",
+      tag: "",
       description: "",
     };
   },
@@ -27,11 +31,15 @@ export default {
 
       const newPackage = {
         name: this.name,
+        git_url: this.git_url,
+        tag: this.tag,
         description: this.description,
       };
       this.$emit("add-package", newPackage);
 
       this.name = "";
+      this.git_url = "";
+      this.tag = "";
       this.description = "";
     },
   },
@@ -44,6 +52,8 @@ export default {
     LinkedinIcon,
     HomeIcon,
     PackageIcon,
+    GithubIcon,
+    GitBranchIcon,
     UserCheckIcon,
   },
   emits: ["add-package", "update-package"],
@@ -118,6 +128,48 @@ export default {
                         </div>
                       </div>
                     </div>
+                    <div class="col-md-12">
+                      <div class="form-group ">
+                        <label
+                          >GitHub URL <span class="text-danger">*</span></label
+                        >
+                        <div class="position-relative">
+                          <github-icon class="fea icon-sm icons"></github-icon>
+                          <input
+                            type="url"
+                            pattern="https://github.com/.*"
+                            v-model="git_url"
+                            class="form-control ps-5"
+                            placeholder="Add your GitHub repository link "
+                            name="git_url"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group ">
+                        <label
+                          >Developer branch
+                          <span class="text-danger">*</span></label
+                        >
+                        <div class="position-relative">
+                          <git-branch-icon
+                            class="fea icon-sm icons"
+                          ></git-branch-icon>
+                          <input
+                            type="text"
+                            v-model="tag"
+                            class="form-control ps-5"
+                            placeholder="Add your GitHub developer branch "
+                            name="tag"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+
                     <div class="col-md-12">
                       <div class="form-group ">
                         <label

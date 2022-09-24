@@ -1,14 +1,13 @@
 <script>
-import Button from "../../../../vue-crash-2021-master/src/components/Button.vue";
 /**
  * Navbar component
  */
 export default {
-  components: { Button },
   data() {
     return {
       user: localStorage.getItem(`user`),
       isCondensed: false,
+      isLoggedIn: false,
     };
   },
   props: {
@@ -83,6 +82,14 @@ export default {
       }
     }
   },
+  created() {
+    if (
+      localStorage.getItem("token") !== null &&
+      localStorage.getItem("user") !== null
+    ) {
+      this.isLoggedIn = true;
+    }
+  },
   methods: {
     /**
      * Toggle menu
@@ -112,6 +119,11 @@ export default {
       }
       return false;
     },
+    logOut() {
+      localStorage.removeItem("user");
+      localStorage.removeItem("token");
+      this.isLoggedIn = false;
+    },
   },
 };
 </script>
@@ -133,6 +145,7 @@ export default {
         </div>
         <div class="buy-button" v-if="isIcons !== true">
           <router-link
+            v-show="!isLoggedIn"
             to="/login"
             class="btn"
             :class="{
@@ -141,6 +154,26 @@ export default {
             }"
             >Sign In</router-link
           >
+          <a
+            v-show="isLoggedIn"
+            @click="logOut"
+            class="btn"
+            :class="{
+              'btn-light': navLight === true,
+              'btn-danger': navLight !== true,
+            }"
+            >Log out</a
+          >
+          <!-- <a
+            href="https://github.com/login/oauth/authorize?client_id=1c281240a2b1ff021d88"
+            class="btn"
+            :class="{
+              'btn-light': navLight === true,
+              'btn-primary': navLight !== true,
+            }"
+          >
+            Sign In</a
+          > -->
         </div>
         <ul class="buy-button list-inline mb-0" v-if="isIcons === true">
           <li class="list-inline-item mb-0 developer-icon">
@@ -292,9 +325,21 @@ export default {
           </ul>
           <!--end navigation menu-->
           <div class="buy-menu-btn d-none">
-            <router-link to="/login" class="btn btn-primary"
+            <router-link
+              v-show="!isLoggedIn"
+              to="/login"
+              class="btn btn-primary"
               >Sign In</router-link
             >
+            <a v-show="isLoggedIn" @click="logOut" class="btn btn-danger"
+              >Log out</a
+            >
+            <!-- <a
+              href="https://github.com/login/oauth/authorize?client_id=1c281240a2b1ff021d88"
+              class="btn btn-primary"
+            >
+              Sign In</a
+            > -->
           </div>
           <!--end login button-->
         </div>

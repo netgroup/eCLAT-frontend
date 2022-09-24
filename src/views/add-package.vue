@@ -12,7 +12,7 @@ export default {
   },
   methods: {
     async addNewPackage(newPackage) {
-      const res = await fetch("/backend/api/packages", {
+      const res = await fetch("/backend/packages", {
         method: "POST",
         headers: {
           "Content-type": "application/json",

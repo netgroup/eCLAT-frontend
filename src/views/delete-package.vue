@@ -12,7 +12,7 @@ export default {
     async onDeletePackage(name) {
       if (name === this.$route.params.name) {
         const res = await fetch(
-          `/backend/api/packages/${this.$route.params.name}`,
+          `/backend/packages/${this.$route.params.name}`,
           {
             method: "DELETE",
             headers: {
@@ -37,6 +37,7 @@ export default {
     <Navbar />
     <ConfirmationForm
       operation="delete-package"
+      :packageName="$route.params.name"
       @delete-package="onDeletePackage"
     />
     <Footer />
