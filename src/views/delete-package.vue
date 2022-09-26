@@ -17,7 +17,7 @@ export default {
             method: "DELETE",
             headers: {
               "Content-type": "application/json",
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
+              Authorization: `Bearer ${$cookies.get("jwt")}`,
             },
           }
         );

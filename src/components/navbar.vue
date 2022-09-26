@@ -2,12 +2,14 @@
 /**
  * Navbar component
  */
+import jwt_decode from "jwt-decode";
+
 export default {
   data() {
     return {
-      user: localStorage.getItem(`user`),
       isCondensed: false,
       isLoggedIn: false,
+      username: null,
     };
   },
   props: {
@@ -23,7 +25,7 @@ export default {
   },
 
   mounted: () => {
-    window.onscroll = function() {
+    window.onscroll = function () {
       onwindowScroll();
     };
 
@@ -83,10 +85,8 @@ export default {
     }
   },
   created() {
-    if (
-      localStorage.getItem("token") !== null &&
-      localStorage.getItem("user") !== null
-    ) {
+    if ($cookies.get("jwt") !== null) {
+      this.username = jwt_decode($cookies.get("jwt")).login;
       this.isLoggedIn = true;
     }
   },
@@ -120,8 +120,7 @@ export default {
       return false;
     },
     logOut() {
-      localStorage.removeItem("user");
-      localStorage.removeItem("token");
+      $cookies.remove("jwt");
       this.isLoggedIn = false;
     },
   },
@@ -160,7 +159,7 @@ export default {
             class="btn"
             :class="{
               'btn-light': navLight === true,
-              'btn-danger': navLight !== true,
+              'btn-outline-danger': navLight !== true,
             }"
             >Log out</a
           >
@@ -262,7 +261,7 @@ export default {
 
                 <li>
                   <router-link
-                    :to="`/users/` + this.user + `/packages`"
+                    :to="`/users/` + this.username + `/packages`"
                     class="side-nav-link-ref"
                   >
                     My packages
@@ -323,25 +322,6 @@ export default {
               </ul>
             </li>
           </ul>
-          <!--end navigation menu-->
-          <div class="buy-menu-btn d-none">
-            <router-link
-              v-show="!isLoggedIn"
-              to="/login"
-              class="btn btn-primary"
-              >Sign In</router-link
-            >
-            <a v-show="isLoggedIn" @click="logOut" class="btn btn-danger"
-              >Log out</a
-            >
-            <!-- <a
-              href="https://github.com/login/oauth/authorize?client_id=1c281240a2b1ff021d88"
-              class="btn btn-primary"
-            >
-              Sign In</a
-            > -->
-          </div>
-          <!--end login button-->
         </div>
         <!--end navigation-->
       </div>

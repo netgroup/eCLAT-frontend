@@ -239,7 +239,11 @@ export default {
                 <div class="mt-4 pt-2">
                   <h5 class="">Mantainer :</h5>
                   <div class="mt-2">
-                    <span class="text-primary fs-5">{{ p.author }} </span>
+                    <a
+                      class="text-primary fs-5"
+                      :href="'https://github.com/' + p.author"
+                      >{{ p.author }}
+                    </a>
                   </div>
                   <!--end process box-->
                 </div>

@@ -27,7 +27,7 @@ export default {
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8 col-md-12 text-center">
-            <img src="images/404.svg" class="img-fluid" alt="" />
+            <img src="@/assets/images/404.svg" class="img-fluid" alt="" />
             <div class="text-uppercase mt-4 display-3">Oh ! no</div>
             <div class="text-capitalize text-dark mb-4 error-page">
               Page Not Found

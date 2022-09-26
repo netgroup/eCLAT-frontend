@@ -1,6 +1,5 @@
 <script>
-import Switcher from "@/components/switcher";
-import { HomeIcon, UserIcon, KeyIcon } from "vue-feather-icons";
+import { HomeIcon, UserIcon, KeyIcon, GithubIcon } from "vue-feather-icons";
 
 /**
  * Login component
@@ -9,30 +8,16 @@ export default {
   name: "Login",
   data() {
     return {
-      email: "",
-      password: "",
+      GITHUB_CLIENT_ID: "1c281240a2b1ff021d88",
+      gitHubRedirectURL: "http://localhost:3200/api/v1/auth/login/github",
     };
   },
   components: {
-    Switcher,
     HomeIcon,
     UserIcon,
     KeyIcon,
+    GithubIcon,
   },
-  methods: {
-    onSubmit(e) {
-      const loginInfo = {
-        email: this.email,
-        password: this.password,
-      };
-
-      this.$emit("login-user", loginInfo);
-
-      this.email = "";
-      this.password = "";
-    },
-  },
-  emits: ["login-user"],
 };
 </script>
 
@@ -45,7 +30,7 @@ export default {
     </div>
 
     <!-- Hero Start -->
-    <section class="bg-home d-flex align-items-center">
+    <section class="d-flex align-items-center p-2">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-7 col-md-6">
@@ -57,124 +42,27 @@ export default {
               />
             </div>
           </div>
-          <div class="col-lg-5 col-md-6">
-            <div class="card login-page bg-white shadow rounded border-0">
-              <div class="card-body">
-                <h4 class="card-title text-center">Login</h4>
-                <form class="login-form mt-4" @submit.prevent="onSubmit">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="form-group">
-                        <label
-                          >Your Email <span class="text-danger">*</span></label
-                        >
-                        <div class="position-relative">
-                          <user-icon class="fea icon-sm icons"></user-icon>
-                          <input
-                            v-model="email"
-                            type="email"
-                            class="form-control ps-5"
-                            placeholder="Email"
-                            name="email"
-                            required=""
-                          />
-                        </div>
-                      </div>
-                    </div>
 
-                    <div class="col-lg-12">
-                      <div class="form-group">
-                        <label
-                          >Password <span class="text-danger">*</span></label
-                        >
-                        <div class="position-relative">
-                          <key-icon class="fea icon-sm icons"></key-icon>
-                          <input
-                            v-model="password"
-                            autocomplete="on"
-                            type="password"
-                            class="form-control ps-5"
-                            placeholder="Password"
-                            required=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- <div class="col-lg-12">
-                    <div class="d-flex justify-content-between">
-                      <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="customCheck1"
-                          />
-                          <label class="custom-control-label" for="customCheck1"
-                            >Remember me</label
-                          >
-                        </div>
-                      </div>
-                      <p class="forgot-pass mb-0">
-                        <router-link
-                          to="/auth-re-password"
-                          class="text-dark font-weight-bold"
-                          >Forgot password ?</router-link
-                        >
-                      </p>
-                    </div>
-                  </div> -->
-                    <div class="col-lg-12 mb-0">
-                      <input
-                        class="btn btn-primary btn-block col-lg-12"
-                        type="submit"
-                        value="Sign in"
-                      />
-                    </div>
-                    <div class="col-lg-12 mt-4 text-center">
-                      <h6>Or Login With</h6>
-                      <div class="row">
-                        <div class="col-6 mt-3">
-                          <a
-                            href="javascript:void(0)"
-                            class="btn btn-block btn-light"
-                            ><i class="mdi mdi-facebook text-primary"></i>
-                            Facebook</a
-                          >
-                        </div>
-                        <!--end col-->
-
-                        <div class="col-6 mt-3">
-                          <a
-                            href="javascript:void(0)"
-                            class="btn btn-block btn-light"
-                            ><i class="mdi mdi-google text-danger"></i>
-                            Google</a
-                          >
-                        </div>
-                        <!--end col-->
-                      </div>
-                    </div>
-                    <!--end col-->
-                    <div class="col-12 text-center">
-                      <p class="mb-0 mt-3">
-                        <small class="text-dark me-2"
-                          >Don't have an account?</small
-                        >
-                        <router-link
-                          to="/signup"
-                          class="text-dark 
-                          fw-bold"
-                          >Sign Up</router-link
-                        >
-                      </p>
-                    </div>
-                  </div>
-                </form>
-              </div>
+          <div class="card text-center col-lg-5 col-md-6">
+            <img
+              src="@/assets/logo-dark-2.png"
+              class="card-img-top w-50 mx-auto pt-4"
+              alt="eclat-logo-dark-2"
+            />
+            <div class="card-body">
+              <h5 class="card-title fs-3">Log in to your account</h5>
+              <p class="card-text">
+                Use your GitHub account to login the eCLAT® website and fully
+                utilize all the functions provided by our framework.
+              </p>
+              <a
+                :href="`https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${gitHubRedirectURL}&scope=user:email`"
+                class="btn btn-primary btn-block col-lg-12 mt-3"
+                ><github-icon size="1.5x" class="me-3"></github-icon>GitHub</a
+              >
             </div>
-            <!---->
           </div>
+
           <!--end col-->
         </div>
         <!--end row-->
@@ -183,6 +71,5 @@ export default {
     </section>
     <!--end section-->
     <!-- Hero End -->
-    <Switcher />
   </div>
 </template>

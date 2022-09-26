@@ -221,7 +221,7 @@ export default {
                   >Read More <i class="mdi mdi-chevron-right"></i
                 ></a>
                 <i
-                  class="uil uil-airplay text-primary full-img "
+                  class="uil uil-airplay text-primary full-img"
                   style="text-align: center"
                 ></i>
               </div>
@@ -244,11 +244,11 @@ export default {
                   You can easily program different logic, as programming is more
                   flexibile than configuring
                 </p>
-                <a href="javascript:void(0)" class=" text-primary read-more"
+                <a href="javascript:void(0)" class="text-primary read-more"
                   >Read More <i class="mdi mdi-chevron-right"></i
                 ></a>
                 <i
-                  class="uil uil-focus-target text-primary full-img "
+                  class="uil uil-focus-target text-primary full-img"
                   style="text-align: center"
                 ></i>
               </div>
@@ -403,7 +403,7 @@ export default {
                   >Our Talented & Experienced Marketing Agency
                 </li>
                 <li class="mb-0">
-                  <span class="text-primary h5 m-2"
+                  <span class="text-primary h5 me-2"
                     ><i class="uil uil-check-circle align-middle"></i></span
                   >Create your own skin to match your brand
                 </li>

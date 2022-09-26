@@ -17,6 +17,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import PackageRelease from "@/components/PackageRelease";
 import ConfirmationForm from "@/components/ConfirmationForm";
+import jwt_decode from "jwt-decode";
 
 /**
  * package-detail component
@@ -42,7 +43,7 @@ export default {
     const dataAuthor = await resAuthor.json();
     this.authorInfo = await dataAuthor.data;
 
-    if (this.authorInfo.username === localStorage.getItem("user")) {
+    if (this.authorInfo.username === jwt_decode($cookies.get("jwt")).login) {
       this.showButton = true;
     }
   },
@@ -64,7 +65,7 @@ export default {
             method: "PUT",
             headers: {
               "Content-type": "application/json",
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
+              Authorization: `Bearer ${$cookies.get("jwt")}`,
             },
             body: JSON.stringify(versionToDelete),
           }
@@ -211,9 +212,12 @@ export default {
                 <div class="ms-3">
                   <!-- @click="$router.push(`/users/${authorInfo._id}`)" -->
                   <h6 class="title mb-0">Author:</h6>
-                  <p class=" text-primary mb-0">
+                  <a
+                    class=" text-primary mb-0"
+                    :href="'https://github.com/' + authorInfo.username"
+                  >
                     {{ authorInfo.username }}
-                  </p>
+                  </a>
                 </div>
               </div>
 
@@ -222,11 +226,15 @@ export default {
                 <div class="ms-3">
                   <h6 class="title mb-0">Email:</h6>
                   <a
+                    :v-show="authorInfo.email"
                     class=" text-primary mb-0"
                     :href="'mailto:' + authorInfo.email"
                   >
                     {{ authorInfo.email }}
                   </a>
+                  <p v-show="!authorInfo.email" class=" text-primary mb-0">
+                    -
+                  </p>
                 </div>
               </div>
 

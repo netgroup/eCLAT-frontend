@@ -19,11 +19,6 @@ const routes = [
     component: () => import("../views/login-page.vue"),
   },
   {
-    path: "/signup",
-    name: "signup",
-    component: () => import("../views/signup-page.vue"),
-  },
-  {
     path: "/packages",
     name: "packages",
     component: () => import("../views/packages"),
@@ -128,11 +123,6 @@ const routes = [
     path: "/helpcenter-support-request",
     name: "helpcenter-support-request",
     component: () => import("../views/helpcenter-support-request"),
-  },
-  {
-    path: "/email-confirmation",
-    name: "email-confirmation",
-    component: () => import("../views/email-confirmation"),
   },
   {
     path: "/page-job-apply",

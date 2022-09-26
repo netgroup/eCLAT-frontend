@@ -16,7 +16,7 @@ export default {
         method: "PATCH",
         headers: {
           "Content-type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${$cookies.get("jwt")}`,
         },
         body: JSON.stringify(newPackage),
       });

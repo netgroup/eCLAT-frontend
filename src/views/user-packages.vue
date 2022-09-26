@@ -3,6 +3,7 @@ import { ArrowUpIcon, GithubIcon, HelpCircleIcon } from "vue-feather-icons";
 
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import jwt_decode from "jwt-decode";
 
 import Package from "@/components/Package";
 export default {
@@ -11,7 +12,6 @@ export default {
       .then((response) => response.json())
       .then((data) => {
         this.packages = data.data;
-        console.log(this.packages);
       });
     return {
       packages: [],
@@ -23,8 +23,12 @@ export default {
     };
   },
   created() {
-    if (this.$route.params.username === localStorage.getItem("user")) {
-      this.isUser = true;
+    if ($cookies.get("jwt") !== null) {
+      if (
+        this.$route.params.username === jwt_decode($cookies.get("jwt")).login
+      ) {
+        this.isUser = true;
+      }
     }
   },
   components: {
@@ -50,17 +54,17 @@ export default {
           <div class="col-lg-12 text-center">
             <div class="page-next-level">
               <h4
-                v-show="!isUser && this.$route.params.id === 'null'"
+                v-show="!isUser && this.$route.params.username === 'null'"
                 class="title"
               >
                 Login to see your packages.
               </h4>
               <h4
-                v-show="!isUser && this.$route.params.id !== 'null'"
+                v-show="!isUser && this.$route.params.username !== 'null'"
                 class="title"
               >
                 Packages published by
-                <span style="color:#215BBF">{{ $route.params.id }}</span>
+                <span style="color:#215BBF">{{ $route.params.username }}</span>
               </h4>
               <h4 v-show="isUser" class="title">
                 My packages

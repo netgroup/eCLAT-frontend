@@ -19,7 +19,7 @@ export default {
           method: "POST",
           headers: {
             "Content-type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${$cookies.get("jwt")}`,
           },
           body: JSON.stringify(newVersion),
         }

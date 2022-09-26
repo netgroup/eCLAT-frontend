@@ -14,9 +14,10 @@ export default {
     async addNewPackage(newPackage) {
       const res = await fetch("/backend/packages", {
         method: "POST",
+        // credentials: "include",
         headers: {
           "Content-type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${$cookies.get("jwt")}`,
         },
         body: JSON.stringify(newPackage),
       });
