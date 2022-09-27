@@ -17,9 +17,9 @@ export default {
         `/backend/packages/${this.$route.params.name}/version`,
         {
           method: "POST",
+          credentials: "include",
           headers: {
             "Content-type": "application/json",
-            Authorization: `Bearer ${$cookies.get("jwt")}`,
           },
           body: JSON.stringify(newVersion),
         }
@@ -35,8 +35,8 @@ export default {
 };
 </script>
 
-<template
-  ><div>
+<template>
+  <div>
     <Navbar :nav-light="false" :isWhiteNavbar="true" />
     <AddVersionForm @add-version="addNewPackage" />
     <Footer />

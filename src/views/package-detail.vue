@@ -52,6 +52,9 @@ export default {
       this.versionToDeleteID = id;
       this.showConfirmationForm = true;
     },
+    closeConfirmationForm() {
+      this.showConfirmationForm = false;
+    },
 
     async onDeleteRelease(name) {
       if (name === this.packageInfo.name) {
@@ -63,9 +66,9 @@ export default {
           `/backend/packages/${this.$route.params.name}/delete-version`,
           {
             method: "PUT",
+            credentials: "include",
             headers: {
               "Content-type": "application/json",
-              Authorization: `Bearer ${$cookies.get("jwt")}`,
             },
             body: JSON.stringify(versionToDelete),
           }
@@ -117,6 +120,7 @@ export default {
         class="confirmation-banner"
         operation="delete-version"
         @delete-version="onDeleteRelease"
+        @close-confirmation-form="closeConfirmationForm"
       />
       <div class="blurry-background"></div>
     </div>

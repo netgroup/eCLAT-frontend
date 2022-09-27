@@ -15,9 +15,9 @@ export default {
           `/backend/packages/${this.$route.params.name}`,
           {
             method: "DELETE",
+            credentials: "include",
             headers: {
               "Content-type": "application/json",
-              Authorization: `Bearer ${$cookies.get("jwt")}`,
             },
           }
         );

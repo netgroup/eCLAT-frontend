@@ -14,9 +14,9 @@ export default {
     async updatePackage(newPackage) {
       const res = await fetch(`/backend/packages/${this.$route.params.name}`, {
         method: "PATCH",
+        credentials: "include",
         headers: {
           "Content-type": "application/json",
-          Authorization: `Bearer ${$cookies.get("jwt")}`,
         },
         body: JSON.stringify(newPackage),
       });
@@ -31,8 +31,8 @@ export default {
 };
 </script>
 
-<template
-  ><div>
+<template>
+  <div>
     <Navbar :nav-light="false" :isWhiteNavbar="true" />
     <AddPackageForm operation="update" @add-package="updatePackage" />
     <Footer />

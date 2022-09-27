@@ -14,10 +14,9 @@ export default {
     async addNewPackage(newPackage) {
       const res = await fetch("/backend/packages", {
         method: "POST",
-        // credentials: "include",
+        credentials: "include",
         headers: {
           "Content-type": "application/json",
-          Authorization: `Bearer ${$cookies.get("jwt")}`,
         },
         body: JSON.stringify(newPackage),
       });
@@ -32,8 +31,8 @@ export default {
 };
 </script>
 
-<template
-  ><div>
+<template>
+  <div>
     <Navbar :nav-light="false" :isWhiteNavbar="true" />
     <AddPackageForm operation="add" @add-package="addNewPackage" />
     <Footer />
