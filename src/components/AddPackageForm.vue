@@ -71,7 +71,7 @@ export default {
 
     <!-- Hero Start -->
     <section class="bg-auth-home d-table w-100">
-      <div class="container ">
+      <div class="container">
         <div class="row align-items-center">
           <!-- <div class="col-lg-7 col-md-6">
             <div class="mr-lg-5">
@@ -108,7 +108,7 @@ export default {
                       </p>
                     </div>
                     <div class="col-md-12">
-                      <div class="form-group ">
+                      <div class="form-group">
                         <label
                           >Package name
                           <span class="text-danger">*</span></label
@@ -129,7 +129,7 @@ export default {
                       </div>
                     </div>
                     <div class="col-md-12">
-                      <div class="form-group ">
+                      <div class="form-group">
                         <label
                           >GitHub URL <span class="text-danger">*</span></label
                         >
@@ -149,7 +149,7 @@ export default {
                     </div>
 
                     <div class="col-md-12">
-                      <div class="form-group ">
+                      <div class="form-group">
                         <label
                           >Developer branch
                           <span class="text-danger">*</span></label
@@ -171,7 +171,7 @@ export default {
                     </div>
 
                     <div class="col-md-12">
-                      <div class="form-group ">
+                      <div class="form-group">
                         <label
                           >Description<span class="text-danger">*</span></label
                         >
@@ -190,7 +190,7 @@ export default {
 
                     <div class="col-md-12">
                       <input
-                        class="btn btn-primary btn-block "
+                        class="btn btn-primary btn-block"
                         type="submit"
                         :value="
                           this.operation === 'add'
@@ -218,7 +218,7 @@ export default {
       href="javascript: void(0);"
       class="btn btn-icon btn-primary back-to-top"
       id="back-to-top"
-      v-scroll-to="'#topnav'"
+      v-scroll-to="{ element: '#topnav', duration: 500 }"
     >
       <arrow-up-icon class="icons"></arrow-up-icon>
     </a>

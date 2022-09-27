@@ -22,9 +22,9 @@ export default {
 <template>
   <div style="position: relative">
     <div
-      class="dropdown "
+      class="dropdown"
       v-show="showOptions"
-      style="position: absolute; right:0"
+      style="position: absolute; right: 0"
     >
       <button
         class="btn btn-sm btn-link dropdown-toggle"
@@ -39,7 +39,7 @@ export default {
           <a
             class="dropdown-item"
             @click="$emit('open-confirmation-form', release._id)"
-            v-scroll-to="'#topnav'"
+            v-scroll-to="{ element: '#topnav', duration: 500 }"
             >Delete</a
           >
         </li>
@@ -51,7 +51,7 @@ export default {
       <!-- X icon if version is not verified or suspended, arrow icon otherwise -->
       <x-circle-icon
         v-show="release.status === 'error'"
-        class="fea icon-sm text-danger  mr-2"
+        class="fea icon-sm text-danger mr-2"
         v-b-tooltip.hover.v-danger
         title="Version didn't pass the verification phase!"
       ></x-circle-icon>

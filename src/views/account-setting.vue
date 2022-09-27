@@ -644,90 +644,166 @@ export default {
             </div>
 
             <div class="rounded shadow mt-4">
-                            <div class="p-4 border-bottom">
-                                <h5 class="mb-0">Account Notifications :</h5>
-                            </div>
+              <div class="p-4 border-bottom">
+                <h5 class="mb-0">Account Notifications :</h5>
+              </div>
 
-                            <div class="p-4">
-                                <div class="d-flex justify-content-between pb-4">
-                                    <h6 class="mb-0">When someone mentions me</h6>
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                                        <label class="custom-control-label" for="customSwitch1"></label>
-                                    </div>
-                                </div>
-                                <div class="media d-flex justify-content-between py-4 border-top">
-                                    <h6 class="mb-0">When someone follows me</h6>
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" class="custom-control-input" id="customSwitch2" checked="">
-                                        <label class="custom-control-label" for="customSwitch2"></label>
-                                    </div>
-                                </div>
-                                <div class="media d-flex justify-content-between py-4 border-top">
-                                    <h6 class="mb-0">When shares my activity</h6>
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" class="custom-control-input" id="customSwitch3">
-                                        <label class="custom-control-label" for="customSwitch3"></label>
-                                    </div>
-                                </div>
-                                <div class="media d-flex justify-content-between py-4 border-top">
-                                    <h6 class="mb-0">When someone messages me</h6>
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" class="custom-control-input" id="customSwitch4" checked="">
-                                        <label class="custom-control-label" for="customSwitch4"></label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+              <div class="p-4">
+                <div class="d-flex justify-content-between pb-4">
+                  <h6 class="mb-0">When someone mentions me</h6>
+                  <div class="custom-control custom-switch">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customSwitch1"
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="customSwitch1"
+                    ></label>
+                  </div>
+                </div>
+                <div
+                  class="media d-flex justify-content-between py-4 border-top"
+                >
+                  <h6 class="mb-0">When someone follows me</h6>
+                  <div class="custom-control custom-switch">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customSwitch2"
+                      checked=""
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="customSwitch2"
+                    ></label>
+                  </div>
+                </div>
+                <div
+                  class="media d-flex justify-content-between py-4 border-top"
+                >
+                  <h6 class="mb-0">When shares my activity</h6>
+                  <div class="custom-control custom-switch">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customSwitch3"
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="customSwitch3"
+                    ></label>
+                  </div>
+                </div>
+                <div
+                  class="media d-flex justify-content-between py-4 border-top"
+                >
+                  <h6 class="mb-0">When someone messages me</h6>
+                  <div class="custom-control custom-switch">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customSwitch4"
+                      checked=""
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="customSwitch4"
+                    ></label>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                        <div class="rounded shadow mt-4">
-                            <div class="p-4 border-bottom">
-                                <h5 class="mb-0">Marketing Notifications :</h5>
-                            </div>
+            <div class="rounded shadow mt-4">
+              <div class="p-4 border-bottom">
+                <h5 class="mb-0">Marketing Notifications :</h5>
+              </div>
 
-                            <div class="p-4">
-                                <div class="media d-flex justify-content-between pb-4">
-                                    <h6 class="mb-0">There is a sale or promotion</h6>
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" class="custom-control-input" id="customSwitch5" checked="">
-                                        <label class="custom-control-label" for="customSwitch5"></label>
-                                    </div>
-                                </div>
-                                <div class="media d-flex justify-content-between py-4 border-top">
-                                    <h6 class="mb-0">Company news</h6>
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" class="custom-control-input" id="customSwitch6">
-                                        <label class="custom-control-label" for="customSwitch6"></label>
-                                    </div>
-                                </div>
-                                <div class="media d-flex justify-content-between py-4 border-top">
-                                    <h6 class="mb-0">Weekly jobs</h6>
-                                    <div class="custom-control custom-switch"> 
-                                        <input type="checkbox" class="custom-control-input" id="customSwitch7">
-                                        <label class="custom-control-label" for="customSwitch7"></label>
-                                    </div>
-                                </div>
-                                <div class="media d-flex justify-content-between py-4 border-top">
-                                    <h6 class="mb-0">Unsubscribe News</h6>
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" class="custom-control-input" id="customSwitch8" checked="">
-                                        <label class="custom-control-label" for="customSwitch8"></label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="rounded shadow mt-4">
-                            <div class="p-4 border-bottom">
-                                <h5 class="mb-0 text-danger">Delete Account :</h5>
-                            </div>
+              <div class="p-4">
+                <div class="media d-flex justify-content-between pb-4">
+                  <h6 class="mb-0">There is a sale or promotion</h6>
+                  <div class="custom-control custom-switch">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customSwitch5"
+                      checked=""
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="customSwitch5"
+                    ></label>
+                  </div>
+                </div>
+                <div
+                  class="media d-flex justify-content-between py-4 border-top"
+                >
+                  <h6 class="mb-0">Company news</h6>
+                  <div class="custom-control custom-switch">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customSwitch6"
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="customSwitch6"
+                    ></label>
+                  </div>
+                </div>
+                <div
+                  class="media d-flex justify-content-between py-4 border-top"
+                >
+                  <h6 class="mb-0">Weekly jobs</h6>
+                  <div class="custom-control custom-switch">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customSwitch7"
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="customSwitch7"
+                    ></label>
+                  </div>
+                </div>
+                <div
+                  class="media d-flex justify-content-between py-4 border-top"
+                >
+                  <h6 class="mb-0">Unsubscribe News</h6>
+                  <div class="custom-control custom-switch">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customSwitch8"
+                      checked=""
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="customSwitch8"
+                    ></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="rounded shadow mt-4">
+              <div class="p-4 border-bottom">
+                <h5 class="mb-0 text-danger">Delete Account :</h5>
+              </div>
 
-                            <div class="p-4">
-                                <h6 class="mb-0">Do you want to delete the account? Please press below "Delete" button</h6>
-                                <div class="mt-4">
-                                    <button class="btn btn-danger">Delete Account</button>
-                                </div><!--end col-->
-                            </div>
-                        </div>
+              <div class="p-4">
+                <h6 class="mb-0">
+                  Do you want to delete the account? Please press below "Delete"
+                  button
+                </h6>
+                <div class="mt-4">
+                  <button class="btn btn-danger">Delete Account</button>
+                </div>
+                <!--end col-->
+              </div>
+            </div>
           </div>
           <!--end col-->
         </div>
@@ -747,7 +823,7 @@ export default {
       href="javascript: void(0);"
       class="btn btn-icon btn-primary back-to-top"
       id="back-to-top"
-      v-scroll-to="'#topnav'"
+      v-scroll-to="{ element: '#topnav', duration: 500 }"
     >
       <arrow-up-icon class="icons"></arrow-up-icon>
     </a>

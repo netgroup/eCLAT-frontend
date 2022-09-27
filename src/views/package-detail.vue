@@ -114,7 +114,7 @@ export default {
   <div>
     <div v-show="showConfirmationForm">
       <ConfirmationForm
-        class="confirmation-banner "
+        class="confirmation-banner"
         operation="delete-version"
         @delete-version="onDeleteRelease"
       />
@@ -201,19 +201,19 @@ export default {
           <!-- Package Detail Start -->
 
           <div class="card col-lg-4 col-md-5 col-12" style="border-style: none">
-            <div class="card  sticky-bar rounded shadow border-0">
+            <div class="card sticky-bar rounded shadow border-0">
               <div class="card-body">
-                <h5 class="card-title border-bottom pb-0 ">
+                <h5 class="card-title border-bottom pb-0">
                   Package information
                 </h5>
               </div>
               <div class="d-flex align-items-center p-3 ms-3">
-                <user-check-icon class=" fea icon-ex-md "></user-check-icon>
+                <user-check-icon class="fea icon-ex-md"></user-check-icon>
                 <div class="ms-3">
                   <!-- @click="$router.push(`/users/${authorInfo._id}`)" -->
                   <h6 class="title mb-0">Author:</h6>
                   <a
-                    class=" text-primary mb-0"
+                    class="text-primary mb-0"
                     :href="'https://github.com/' + authorInfo.username"
                   >
                     {{ authorInfo.username }}
@@ -222,38 +222,36 @@ export default {
               </div>
 
               <div class="d-flex align-items-center p-3 ms-3">
-                <mail-icon class=" fea icon-ex-md "></mail-icon>
+                <mail-icon class="fea icon-ex-md"></mail-icon>
                 <div class="ms-3">
                   <h6 class="title mb-0">Email:</h6>
                   <a
                     :v-show="authorInfo.email"
-                    class=" text-primary mb-0"
+                    class="text-primary mb-0"
                     :href="'mailto:' + authorInfo.email"
                   >
                     {{ authorInfo.email }}
                   </a>
-                  <p v-show="!authorInfo.email" class=" text-primary mb-0">
-                    -
-                  </p>
+                  <p v-show="!authorInfo.email" class="text-primary mb-0">-</p>
                 </div>
               </div>
 
               <div class="d-flex align-items-center p-3 ms-3">
-                <github-icon class=" fea icon-ex-md "></github-icon>
+                <github-icon class="fea icon-ex-md"></github-icon>
                 <div class="ms-3">
                   <h6 class="title mb-0">GitHub repository:</h6>
-                  <a class=" text-primary mb-0" :href="packageInfo.git_url">
+                  <a class="text-primary mb-0" :href="packageInfo.git_url">
                     {{ packageInfo.git_url.slice(8) }}
                   </a>
                 </div>
               </div>
 
               <div class="d-flex align-items-center p-3 ms-3">
-                <home-icon class=" fea icon-ex-md "></home-icon>
+                <home-icon class="fea icon-ex-md"></home-icon>
                 <div class="ms-3">
                   <h6 class="title mb-0">Homepage:</h6>
                   <a
-                    class=" text-primary mb-0"
+                    class="text-primary mb-0"
                     :href="packageInfo.git_url + '#readme'"
                   >
                     {{ packageInfo.git_url.slice(8) + "#readme" }}
@@ -262,11 +260,11 @@ export default {
               </div>
 
               <div class="d-flex align-items-center p-3 ms-3">
-                <code-icon class=" fea icon-ex-md "></code-icon>
+                <code-icon class="fea icon-ex-md"></code-icon>
                 <div class="ms-3">
                   <h6 class="title mb-0">Developer branch:</h6>
                   <a
-                    class=" text-primary mb-0"
+                    class="text-primary mb-0"
                     :href="packageInfo.git_url + '/tree/' + packageInfo.tag"
                   >
                     {{
@@ -277,20 +275,20 @@ export default {
               </div>
 
               <div class="d-flex align-items-center p-3 ms-3">
-                <refresh-cw-icon class=" fea icon-ex-md "></refresh-cw-icon>
+                <refresh-cw-icon class="fea icon-ex-md"></refresh-cw-icon>
                 <div class="ms-3">
                   <h6 class="title mb-0">Latest update:</h6>
-                  <p class=" text-primary mb-0">
+                  <p class="text-primary mb-0">
                     {{ packageInfo.updated_at.split("T")[0] }}
                   </p>
                 </div>
               </div>
 
               <div class="d-flex align-items-center p-3 ms-3">
-                <clock-icon class=" fea icon-ex-md "></clock-icon>
+                <clock-icon class="fea icon-ex-md"></clock-icon>
                 <div class="ms-3">
                   <h6 class="title mb-0">Date published:</h6>
-                  <p class=" text-primary mb-3">
+                  <p class="text-primary mb-3">
                     {{ packageInfo.created_at.split("T")[0] }}
                   </p>
                 </div>
@@ -395,7 +393,7 @@ export default {
       href="javascript: void(0);"
       class="btn btn-icon btn-primary back-to-top"
       id="back-to-top"
-      v-scroll-to="'#topnav'"
+      v-scroll-to="{ element: '#topnav', duration: 500 }"
     >
       <arrow-up-icon class="icons"></arrow-up-icon>
     </a>

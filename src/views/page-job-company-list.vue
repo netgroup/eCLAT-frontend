@@ -71,7 +71,7 @@ export default {
           company: "circleci.com",
           revenue: "$ 5M / Annual",
           employee: 200,
-        }
+        },
       ],
     };
   },
@@ -80,7 +80,7 @@ export default {
     Switcher,
     Footer,
     ArrowUpIcon,
-    ArrowRightIcon
+    ArrowRightIcon,
   },
 };
 </script>
@@ -159,7 +159,11 @@ export default {
         </div>
         <!--end row-->
         <div class="row">
-          <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2" v-for="(data, index) of companyList" :key="index">
+          <div
+            class="col-lg-4 col-md-6 col-12 mt-4 pt-2"
+            v-for="(data, index) of companyList"
+            :key="index"
+          >
             <div class="company-list card border-0 rounded shadow bg-white">
               <div class="text-center py-5 border-bottom">
                 <img
@@ -167,9 +171,9 @@ export default {
                   class="avatar avatar-small mx-auto rounded-circle d-block mb-3"
                   alt=""
                 />
-                <router-link to="/page-job-company" class="text-dark h5 name"
-                  >{{data.title}}</router-link
-                >
+                <router-link to="/page-job-company" class="text-dark h5 name">{{
+                  data.title
+                }}</router-link>
                 <p class="text-muted mt-1 mb-0">Internet Services</p>
               </div>
 
@@ -193,7 +197,8 @@ export default {
                         d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
                       ></path>
                       <circle cx="12" cy="10" r="3"></circle></svg
-                    ><span class="text-muted">Location :</span> {{data.location}}
+                    ><span class="text-muted">Location :</span>
+                    {{ data.location }}
                   </li>
                   <li class="h6">
                     <svg
@@ -214,7 +219,8 @@ export default {
                       <path
                         d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
                       ></path></svg
-                    ><span class="text-muted">Comapny :</span> {{data.company}}
+                    ><span class="text-muted">Comapny :</span>
+                    {{ data.company }}
                   </li>
                   <li class="h6">
                     <svg
@@ -233,7 +239,8 @@ export default {
                       <path
                         d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
                       ></path></svg
-                    ><span class="text-muted">Revenue :</span> {{data.revenue}}
+                    ><span class="text-muted">Revenue :</span>
+                    {{ data.revenue }}
                   </li>
                   <li class="h6">
                     <svg
@@ -254,14 +261,17 @@ export default {
                       <circle cx="9" cy="7" r="4"></circle>
                       <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                       <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-                    ><span class="text-muted">No. of employees :</span> {{data.employee}}
+                    ><span class="text-muted">No. of employees :</span>
+                    {{ data.employee }}
                   </li>
                 </ul>
-                <router-link tag="a"
+                <router-link
+                  tag="a"
                   to="/page-job-company"
                   class="btn btn-block btn-soft-primary"
                   >View Detail
-                  <arrow-right-icon class="fea icon-sm"></arrow-right-icon></router-link>
+                  <arrow-right-icon class="fea icon-sm"></arrow-right-icon
+                ></router-link>
               </div>
             </div>
           </div>
@@ -279,7 +289,7 @@ export default {
       href="javascript: void(0);"
       class="btn btn-icon btn-primary back-to-top"
       id="back-to-top"
-      v-scroll-to="'#topnav'"
+      v-scroll-to="{ element: '#topnav', duration: 500 }"
     >
       <arrow-up-icon class="icons"></arrow-up-icon>
     </a>

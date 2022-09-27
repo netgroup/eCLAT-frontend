@@ -64,11 +64,9 @@ export default {
                 class="title"
               >
                 Packages published by
-                <span style="color:#215BBF">{{ $route.params.username }}</span>
+                <span style="color: #215bbf">{{ $route.params.username }}</span>
               </h4>
-              <h4 v-show="isUser" class="title">
-                My packages
-              </h4>
+              <h4 v-show="isUser" class="title">My packages</h4>
             </div>
           </div>
           <!--end col-->
@@ -92,7 +90,7 @@ export default {
             <div class="col-lg-12">
               <div
                 class="card public-profile border-0 rounded shadow"
-                style="z-index: 1;"
+                style="z-index: 1"
               >
                 <div class="card-body">
                   <div class="row align-items-center">
@@ -138,7 +136,7 @@ export default {
                         <!--end col-->
                         <div class="col-md-5 text-md-end text-center">
                           <ul
-                            class="list-unstyled social-icon social  mb-0 mt-4"
+                            class="list-unstyled social-icon social mb-0 mt-4"
                           >
                             <li class="list-inline-item">
                               <a
@@ -239,7 +237,7 @@ export default {
       href="javascript: void(0);"
       class="btn btn-icon btn-primary back-to-top"
       id="back-to-top"
-      v-scroll-to="'#topnav'"
+      v-scroll-to="{ element: '#topnav', duration: 500 }"
     >
       <arrow-up-icon class="icons"></arrow-up-icon>
     </a>

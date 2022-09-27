@@ -10,7 +10,7 @@ import {
   SettingsIcon,
   MapPinIcon,
   UserIcon,
-  UserCheckIcon
+  UserCheckIcon,
 } from "vue-feather-icons";
 import { Carousel, Slide } from "vue-carousel";
 
@@ -41,7 +41,7 @@ export default {
     SettingsIcon,
     MapPinIcon,
     UserIcon,
-    UserCheckIcon
+    UserCheckIcon,
   },
 };
 </script>
@@ -487,7 +487,6 @@ export default {
         <!--end row-->
       </div>
       <!--end container-->
-
     </section>
     <!--end section-->
     <!-- End -->
@@ -500,7 +499,7 @@ export default {
       href="javascript: void(0);"
       class="btn btn-icon btn-primary back-to-top"
       id="back-to-top"
-      v-scroll-to="'#topnav'"
+      v-scroll-to="{ element: '#topnav', duration: 500 }"
     >
       <arrow-up-icon class="icons"></arrow-up-icon>
     </a>

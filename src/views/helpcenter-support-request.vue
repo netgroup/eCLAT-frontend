@@ -180,10 +180,12 @@ export default {
       <div class="container mt-100 mt-60">
         <div class="row">
           <div class="col-lg-6 col-md-6 col-12">
-            <div class="media align-items-center features feature-clean shadow rounded p-4">
-               <div class="icons text-primary text-center">
-                                <i class="uil uil-envelope-check d-block rounded h3 mb-0"></i>
-                            </div>
+            <div
+              class="media align-items-center features feature-clean shadow rounded p-4"
+            >
+              <div class="icons text-primary text-center">
+                <i class="uil uil-envelope-check d-block rounded h3 mb-0"></i>
+              </div>
               <div class="content ml-4">
                 <h5 class="mb-1">
                   <a href="javascript:void(0)" class="text-dark"
@@ -206,7 +208,9 @@ export default {
           <!--end col-->
 
           <div class="col-lg-6 col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
-            <div class="media align-items-center features feature-clean shadow rounded p-4">
+            <div
+              class="media align-items-center features feature-clean shadow rounded p-4"
+            >
               <div class="icons text-primary text-center">
                 <i class="uil uil-webcam d-block rounded h3 mb-0"></i>
               </div>
@@ -238,7 +242,7 @@ export default {
     <!--end section-->
     <!-- End Section -->
     <!--end section-->
-       <footer class="footer footer-bar">
+    <footer class="footer footer-bar">
       <div class="container text-center">
         <div class="row align-items-center">
           <div class="col-sm-6">
@@ -320,7 +324,7 @@ export default {
       href="javascript: void(0);"
       class="btn btn-icon btn-primary back-to-top"
       id="back-to-top"
-      v-scroll-to="'#topnav'"
+      v-scroll-to="{ element: '#topnav', duration: 500 }"
     >
       <arrow-up-icon class="icons"></arrow-up-icon>
     </a>

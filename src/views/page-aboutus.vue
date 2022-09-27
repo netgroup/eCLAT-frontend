@@ -210,9 +210,7 @@ export default {
         <div class="row justify-content-center">
           <div class="col-12 text-center">
             <div class="section-title">
-              <h4 class="title mb-4">
-                Do you want to meet with us?
-              </h4>
+              <h4 class="title mb-4">Do you want to meet with us?</h4>
               <p class="text-muted para-desc mx-auto">
                 We collaborate with several companies to lower the entry barrier
                 for eBPF using our
@@ -251,7 +249,7 @@ export default {
       href="javascript: void(0);"
       class="btn btn-icon btn-primary back-to-top"
       id="back-to-top"
-      v-scroll-to="'#topnav'"
+      v-scroll-to="{ element: '#topnav', duration: 500 }"
     >
       <arrow-up-icon class="icons"></arrow-up-icon>
     </a>

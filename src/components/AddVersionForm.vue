@@ -83,7 +83,7 @@ export default {
 
     <!-- Hero Start -->
     <section class="bg-auth-home d-table w-100">
-      <div class="container ">
+      <div class="container">
         <div class="row align-items-center">
           <!-- <div class="col-lg-7 col-md-6">
             <div class="mr-lg-5">
@@ -108,7 +108,7 @@ export default {
                       </p>
                     </div>
                     <div class="col-md-12">
-                      <div class="form-group ">
+                      <div class="form-group">
                         <label
                           >GitHub commit:
                           <span class="text-danger">*</span></label
@@ -129,7 +129,7 @@ export default {
                       </div>
                     </div>
                     <div class="col-md-12">
-                      <div class="form-group ">
+                      <div class="form-group">
                         <label
                           >Version <span class="text-danger">*</span></label
                         >
@@ -141,7 +141,7 @@ export default {
                           <input
                             type="number"
                             v-model="major"
-                            class=" text-center form-control rounded"
+                            class="text-center form-control rounded"
                             id="major"
                             name="major"
                             maxlength="3"
@@ -181,21 +181,21 @@ export default {
                             <ul>
                               <li>
                                 In case of
-                                <span style="color: #DE3163">major</span>
+                                <span style="color: #de3163">major</span>
                                 release that introduces a new functionality
                                 which breaks backwards compatibility, upgrade
                                 the first value.
                               </li>
                               <li>
                                 In case of
-                                <span style="color: #FFBF00">minor</span>
+                                <span style="color: #ffbf00">minor</span>
                                 release that introduces a new backwards
                                 compatible functionality, upgrade the second
                                 value.
                               </li>
                               <li>
                                 In case of a
-                                <span style="color: #F2E52C">patch</span>
+                                <span style="color: #f2e52c">patch</span>
                                 release that contains minor modifications to
                                 address a specific problem, upgrade the third
                                 value.
@@ -215,7 +215,7 @@ export default {
                       </div>
                     </div>
                     <div class="col-md-12">
-                      <div class="form-group ">
+                      <div class="form-group">
                         <label>Note</label>
                         <div class="position-relative">
                           <textarea
@@ -256,7 +256,7 @@ export default {
       href="javascript: void(0);"
       class="btn btn-icon btn-primary back-to-top"
       id="back-to-top"
-      v-scroll-to="'#topnav'"
+      v-scroll-to="{ element: '#topnav', duration: 500 }"
     >
       <arrow-up-icon class="icons"></arrow-up-icon>
     </a>

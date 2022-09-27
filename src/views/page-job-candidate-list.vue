@@ -50,7 +50,8 @@ export default {
           designation: "UI Designer",
           experience: "3+ years",
           skills: ["PHP", "Wordpress", "Web Design", "CSS", "JS"],
-        },{
+        },
+        {
           profile: "/images/client/07.jpg",
           name: "Cristino Murphy",
           designation: "PHP Developer",
@@ -72,7 +73,7 @@ export default {
     Switcher,
     Footer,
     ArrowUpIcon,
-    ArrowRightIcon
+    ArrowRightIcon,
   },
 };
 </script>
@@ -155,7 +156,11 @@ export default {
         <!--end row-->
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2" v-for="(data, index) of candidateList" :key="index">
+          <div
+            class="col-lg-4 col-md-6 col-12 mt-4 pt-2"
+            v-for="(data, index) of candidateList"
+            :key="index"
+          >
             <div class="candidate-list card rounded border-0 shadow">
               <div class="card-body">
                 <ul class="list-unstyled align-items-center">
@@ -194,31 +199,40 @@ export default {
                       <i class="mdi mdi-star text-warning"></i>
                     </li>
                   </ul>
-                  <router-link tag="a" to="/page-job-candidate" class="text-dark h5 name"
-                    >{{data.name}}</router-link
+                  <router-link
+                    tag="a"
+                    to="/page-job-candidate"
+                    class="text-dark h5 name"
+                    >{{ data.name }}</router-link
                   >
-                  <p class="text-muted my-1">{{data.designation}}</p>
+                  <p class="text-muted my-1">{{ data.designation }}</p>
 
                   <span class="text-muted"
                     ><i
                       class="uil uil-graduation-cap h4 mb-0 mr-2 text-primary"
                     ></i
-                    >Experience <span class="text-success">{{data.experience}}</span></span
+                    >Experience
+                    <span class="text-success">{{
+                      data.experience
+                    }}</span></span
                   >
 
                   <ul class="list-unstyled mt-3">
-                    <li class="list-inline-item m-1" v-for="(item, index) of data.skills" :key="index">
+                    <li
+                      class="list-inline-item m-1"
+                      v-for="(item, index) of data.skills"
+                      :key="index"
+                    >
                       <a
                         href="jvascript:void(0)"
                         class="rounded bg-light py-1 px-2 text-muted small"
-                        >{{item}}</a
+                        >{{ item }}</a
                       >
                     </li>
-                   
                   </ul>
 
                   <router-link
-                  tag="a"
+                    tag="a"
                     to="/page-job-candidate"
                     class="btn btn-block btn-soft-primary"
                     >Read More
@@ -274,7 +288,7 @@ export default {
       href="javascript: void(0);"
       class="btn btn-icon btn-primary back-to-top"
       id="back-to-top"
-      v-scroll-to="'#topnav'"
+      v-scroll-to="{ element: '#topnav', duration: 500 }"
     >
       <arrow-up-icon class="icons"></arrow-up-icon>
     </a>
