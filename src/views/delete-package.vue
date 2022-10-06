@@ -3,10 +3,19 @@ import { ArrowUpIcon } from "vue-feather-icons";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ConfirmationForm from "@/components/ConfirmationForm";
+import jwt_decode from "jwt-decode";
 
 export default {
   name: "delete-package",
   components: { Navbar, Footer, ArrowUpIcon, ConfirmationForm },
+  created() {
+    if (!this.$cookies.get("jwt")) {
+      this.$router.push("/login");
+    } else if (jwt_decode(this.$cookies.get("jwt")).exp * 1000 <= Date.now()) {
+      $cookies.remove("jwt");
+      this.$router.push("/login");
+    }
+  },
 
   methods: {
     async onDeletePackage(name) {
@@ -22,7 +31,7 @@ export default {
           }
         );
         const data = await res.json();
-        console.log(data);
+
         if (data.status === 1) {
           this.$router.push("/packages");
         }

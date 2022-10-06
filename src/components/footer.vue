@@ -84,24 +84,6 @@ export default {
                 >
               </li>
               <li>
-                <router-link to="/page-pricing" class="text-foot"
-                  ><i class="mdi mdi-chevron-right mr-1"></i>
-                  Pricing</router-link
-                >
-              </li>
-              <li>
-                <router-link to="/page-portfolio-modern" class="text-foot"
-                  ><i class="mdi mdi-chevron-right mr-1"></i>
-                  Project</router-link
-                >
-              </li>
-              <li>
-                <router-link to="/page-jobs" class="text-foot"
-                  ><i class="mdi mdi-chevron-right mr-1"></i>
-                  Careers</router-link
-                >
-              </li>
-              <li>
                 <router-link to="/page-blog-grid" class="text-foot"
                   ><i class="mdi mdi-chevron-right mr-1"></i> Blog</router-link
                 >
@@ -152,9 +134,7 @@ export default {
           <!--end col-->
 
           <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
-            <h5 class="text-light footer-head">
-              Newsletter
-            </h5>
+            <h5 class="text-light footer-head">Newsletter</h5>
             <p class="mt-4">Sign up and receive the latest tips via email.</p>
             <form>
               <div class="row">
@@ -165,7 +145,7 @@ export default {
                       <span class="text-danger">*</span></label
                     >
                     <div class="position-relative">
-                      <mail-icon class="fea icon-sm icons "></mail-icon>
+                      <mail-icon class="fea icon-sm icons"></mail-icon>
                       <input
                         type="email"
                         name="email"

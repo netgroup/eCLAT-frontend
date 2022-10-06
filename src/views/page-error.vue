@@ -39,9 +39,6 @@ export default {
 
         <div class="row mb-3">
           <div class="col-md-12 text-center">
-            <router-link to="/" class="btn btn-outline-primary mt-4"
-              >Go Back</router-link
-            >
             <router-link to="/" class="btn btn-primary mt-4 ms-2"
               >Go To Home</router-link
             >

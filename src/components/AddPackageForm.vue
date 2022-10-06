@@ -21,7 +21,7 @@ export default {
     return {
       name: "",
       git_url: "",
-      tag: "",
+      dev_branch: "",
       description: "",
     };
   },
@@ -32,14 +32,14 @@ export default {
       const newPackage = {
         name: this.name,
         git_url: this.git_url,
-        tag: this.tag,
+        dev_branch: this.dev_branch,
         description: this.description,
       };
       this.$emit("add-package", newPackage);
 
       this.name = "";
       this.git_url = "";
-      this.tag = "";
+      this.dev_branch = "";
       this.description = "";
     },
   },
@@ -83,22 +83,19 @@ export default {
             </div>
           </div> -->
           <div class="col-lg-6 col-md-8 m-auto">
-            <div class="card shadow rounded border-0">
+            <div class="card shadow-lg p-3 mb-5 bg-body rounded border-light">
               <div class="card-body">
                 <h4 class="card-title text-center">Package information</h4>
                 <form class="login-form mt-4" @submit.prevent="onSubmit">
                   <div class="row">
                     <div class="col-md-12">
-                      <p v-show="this.operation === 'add'" class="text-muted">
+                      <p v-if="this.operation === 'add'" class="text-muted">
                         In this page you can make public your eBPF package by
                         inserting its name and a short description about its
                         usage in the form below. Keep in mind that the name of
                         the package meant to be published should be unique.
                       </p>
-                      <p
-                        v-show="this.operation === 'update'"
-                        class="text-muted"
-                      >
+                      <p v-if="this.operation === 'update'" class="text-muted">
                         In this page you can update the name and description of
                         the package
                         <span class="text-primary fw-bold">{{
@@ -160,10 +157,10 @@ export default {
                           ></git-branch-icon>
                           <input
                             type="text"
-                            v-model="tag"
+                            v-model="dev_branch"
                             class="form-control ps-5"
                             placeholder="Add your GitHub developer branch "
-                            name="tag"
+                            name="dev_branch"
                             required
                           />
                         </div>

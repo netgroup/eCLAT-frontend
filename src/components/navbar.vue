@@ -30,23 +30,25 @@ export default {
     };
 
     function onwindowScroll() {
-      if (
-        document.body.scrollTop > 50 ||
-        document.documentElement.scrollTop > 50
-      ) {
-        document.getElementById("topnav").classList.add("nav-sticky");
-      } else {
-        document.getElementById("topnav").classList.remove("nav-sticky");
-      }
+      try {
+        if (
+          document.body.scrollTop > 50 ||
+          document.documentElement.scrollTop > 50
+        ) {
+          document.getElementById("topnav").classList.add("nav-sticky");
+        } else {
+          document.getElementById("topnav").classList.remove("nav-sticky");
+        }
 
-      if (
-        document.body.scrollTop > 100 ||
-        document.documentElement.scrollTop > 100
-      ) {
-        document.getElementById("back-to-top").style.display = "inline";
-      } else {
-        document.getElementById("back-to-top").style.display = "none";
-      }
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          document.getElementById("back-to-top").style.display = "inline";
+        } else {
+          document.getElementById("back-to-top").style.display = "none";
+        }
+      } catch {}
     }
 
     var links = document.getElementsByClassName("side-nav-link-ref");
@@ -238,7 +240,7 @@ export default {
             </li>
             <li>
               <router-link to="/" class="side-nav-link-ref"
-                >Getting started</router-link
+                >Quickstart</router-link
               >
             </li>
 

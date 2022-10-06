@@ -14,7 +14,6 @@ export default {
   name: "AddVersionForm",
   data() {
     return {
-      commit: "",
       major: "",
       minor: "",
       patch: "",
@@ -46,14 +45,12 @@ export default {
       const version = `${this.major}.${this.minor}.${this.patch}`;
 
       const newVersion = {
-        commit: this.commit,
         version: version,
         note: this.note,
       };
 
       this.$emit("add-version", newVersion);
 
-      this.commit = "";
       this.note = "";
     },
   },
@@ -95,47 +92,19 @@ export default {
             </div>
           </div> -->
           <div class="col-lg-6 col-md-8 m-auto">
-            <div class="card shadow rounded border-0">
+            <div class="card shadow-lg p-3 mb-5 bg-body rounded border-light">
               <div class="card-body">
                 <h4 class="card-title text-center">Package version</h4>
                 <form class="login-form mt-4" @submit.prevent="onSubmit">
                   <div class="row">
                     <div class="col-md-12">
-                      <p class="text-muted">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Dolores nesciunt quidem nisi, magnam sequi officia
-                        temporibus sit rem.
-                      </p>
-                    </div>
-                    <div class="col-md-12">
                       <div class="form-group">
-                        <label
-                          >GitHub commit:
-                          <span class="text-danger">*</span></label
-                        >
-                        <div class="position-relative">
-                          <git-commit-icon
-                            class="fea icon-sm icons"
-                          ></git-commit-icon>
-                          <input
-                            type="text"
-                            v-model="commit"
-                            class="form-control ps-5"
-                            placeholder="Add your GitHub commit id. Example: d9c069b2c38d93a816034ed1f1bd0b5fb6e23395 "
-                            name="commit"
-                            required
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label
-                          >Version <span class="text-danger">*</span></label
-                        >
-
+                        <label>Tag <span class="text-danger">*</span></label>
+                        <p class="text-muted">
+                          Insert the tag of the release written in the three
+                          digit form.
+                        </p>
                         <div
-                          id="otp"
                           class="inputs d-flex flex-row justify-content-center mt-2 col-lg-6 m-auto"
                         >
                           <input

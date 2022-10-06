@@ -41,8 +41,8 @@ export default {
               </p>
 
               <div class="mt-4 pt-2">
-                <a href="javascript:void(0)" class="btn btn-primary me-2"
-                  >Get Started</a
+                <a href="#quickstart" class="btn btn-primary me-2"
+                  >Quickstart</a
                 >
                 <a
                   href="https://hike-eclat.readthedocs.io/"
@@ -288,7 +288,7 @@ export default {
         <div class="row justify-content-center">
           <div class="col-12">
             <div class="section-title text-center mb-4 pb-2">
-              <h6 class="text-primary">Quickstart</h6>
+              <h6 class="text-primary" id="quickstart">Quickstart</h6>
               <h4 class="title mb-4">Awesome isn't it? Let's dive in!</h4>
               <p class="para-desc mx-auto text-muted mb-0">
                 Start working with

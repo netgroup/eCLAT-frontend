@@ -67,16 +67,12 @@ export default {
         v-b-tooltip.hover
         title="Version waiting to be verified."
       ></pause-icon>
-      {{ release.version }}
+      <a :href="git_url + '/tree/' + release.version" class="text-secondary">
+        {{ release.version }}</a
+      >
     </h4>
     <p>
-      GitHub commit:
-      <a :href="`${git_url}/tree/${release.commit}`" target="_blank">{{
-        release.commit
-      }}</a>
-    </p>
-    <p>
-      Release:
+      Publication date:
       <span style="color: black">{{ release.created_at.split("T")[0] }}</span>
     </p>
     <p>

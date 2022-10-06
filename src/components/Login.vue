@@ -43,7 +43,9 @@ export default {
             </div>
           </div>
 
-          <div class="card text-center col-lg-5 col-md-6">
+          <div
+            class="card text-center shadow-lg p-3 mb-5 bg-body rounded border-light col-lg-5 col-md-6"
+          >
             <img
               src="@/assets/logo-dark-2.png"
               class="card-img-top w-50 mx-auto pt-4"

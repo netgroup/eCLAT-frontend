@@ -49,6 +49,7 @@ export default {
               background-color: #fff;
               box-shadow: 0 0 3px rgba(60, 72, 88, 0.15);
             "
+            class="shadow-lg p-3 mb-5 bg-body rounded border-light"
           >
             <thead>
               <tr
