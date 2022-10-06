@@ -5,6 +5,7 @@ import {
   UserIcon,
   LinkIcon,
   HelpCircleIcon,
+  BoxIcon,
 } from "vue-feather-icons";
 
 import Navbar from "@/components/navbar";
@@ -25,7 +26,7 @@ export default {
 
     return {
       packages: [],
-      author: Object,
+      author: {},
       isUser: false,
     };
   },
@@ -46,6 +47,7 @@ export default {
     LinkIcon,
     HelpCircleIcon,
     Package,
+    BoxIcon,
   },
   methods: {},
 };
@@ -77,7 +79,27 @@ export default {
           </div>
         </div>
         <div class="col-lg-10 col-sm-12 container">
-          <section v-for="p in packages" :key="p._id">
+          <section v-if="packages.length === 0">
+            <div
+              class="container w-75 card border-0 border-left text-center align-middle"
+              style="margin-top: 10%"
+            >
+              <h3 class="card-title text-primary">
+                <box-icon size="1.8x"></box-icon>
+                <br />
+                No Packages Yet
+              </h3>
+              <p class="card-text fs-5">
+                Click
+                <router-link to="/add-package" class="text-primary"
+                  >here</router-link
+                >
+                to insert your first package!
+              </p>
+            </div>
+          </section>
+
+          <section v-for="p in packages" :key="p._id" v-else>
             <div class="container w-75 card border-0 border-bottom my-2">
               <div class="row card-body">
                 <!-- First column -->
